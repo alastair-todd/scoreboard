@@ -52,7 +52,7 @@ describe('getGameScore', () => {
     expect(winningPlayer).to.equal('player1', 'Implement player win logic after 40-0');
   });
   
-    it('Game, player2 (after 15-50)', () => {
+    it('Game, player2 (after 15-40)', () => {
     const gamePoints = { player1: 1, player2: 4 };
 
     const { scoreCall, winningPlayer } = getGameScore(gamePoints);
