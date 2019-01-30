@@ -34,6 +34,14 @@ describe('getGameScore', () => {
 
     expect(gameScore.scoreCall).to.equal('15-love', 'Implement player scored logic');
   });
+  
+  it('15-30', () => {
+    const gamePoints = { player1: 1, player2: 2 };
+
+    const gameScore = getGameScore(gamePoints);
+
+    expect(gameScore.scoreCall).to.equal('15-30', 'Implement player scored logic');
+  });
 
   it('Game, player1 (after 40-0)', () => {
     const gamePoints = { player1: 4, player2: 0 };
@@ -42,6 +50,15 @@ describe('getGameScore', () => {
 
     expect(scoreCall).to.equal('Game, player1', 'Implement player win logic after 40-0');
     expect(winningPlayer).to.equal('player1', 'Implement player win logic after 40-0');
+  });
+  
+    it('Game, player2 (after 15-50)', () => {
+    const gamePoints = { player1: 1, player2: 4 };
+
+    const { scoreCall, winningPlayer } = getGameScore(gamePoints);
+
+    expect(scoreCall).to.equal('Game, player2', 'Implement player win logic after 15-40');
+    expect(winningPlayer).to.equal('player2', 'Implement player win logic after 15-40');
   });
 });
 
