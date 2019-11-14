@@ -28,6 +28,7 @@ Score Calling examples:
   - 0-0 = love-all
   - 15-15 = 15-all
   - 15-0 = 15-love
+  - 40-40 = Deuce
   - AD-40 = Advantage, player1
 
 Useful links with more details on score calling:
@@ -44,6 +45,7 @@ Useful links with more details on score calling:
   > The browser will automatically be loaded and the app displayed.
 - Run the tests: `npm run test`
   > If you want the tests to be automatically re-executed on change: `npm run test -- --watch`
+- When you are ready to fully test your logic for `getGameScore` then remove the `.skip()` function from the last suite of tests.
 
 ## Notes
 
