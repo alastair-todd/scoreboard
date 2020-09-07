@@ -14,11 +14,11 @@ describe('initialState', () => {
     it('each player starts with 0 points', () => {
       expect(initialState.gamePoints.player1).to.equal(0);
       expect(initialState.gamePoints.player2).to.equal(0);
-    })
-  })
+    });
+  });
 });
 
-describe('getGameScore', () => {
+describe.only('getGameScore', () => {
   it('love-all', () => {
     const gamePoints = { player1: 0, player2: 0 };
 
@@ -52,7 +52,7 @@ describe('getGameScore', () => {
     expect(winningPlayer).to.equal('player1', 'Implement player win logic after 40-0');
   });
 
-    it('Game, player2 (after 15-40)', () => {
+  it('Game, player2 (after 15-40)', () => {
     const gamePoints = { player1: 1, player2: 4 };
 
     const { scoreCall, winningPlayer } = getGameScore(gamePoints);
@@ -150,7 +150,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player1-scores').simulate('click');
     wrapper.find('button.player1-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: 30-love', 'Implement game scoring UI interaction for a 2 button click for player 1');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: 30-love',
+      'Implement game scoring UI interaction for a 2 button click for player 1'
+    );
   });
   it('30-15', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -159,7 +162,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player1-scores').simulate('click');
     wrapper.find('button.player2-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: 30-15', 'Implement game scoring UI interaction for a 3 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: 30-15',
+      'Implement game scoring UI interaction for a 3 button click by each player'
+    );
   });
   it('40-15', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -169,7 +175,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player2-scores').simulate('click');
     wrapper.find('button.player1-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: 40-15', 'Implement game scoring UI interaction for a 4 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: 40-15',
+      'Implement game scoring UI interaction for a 4 button click by each player'
+    );
   });
   it('40-30', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -180,7 +189,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player1-scores').simulate('click');
     wrapper.find('button.player2-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: 40-30', 'Implement game scoring UI interaction for a 5 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: 40-30',
+      'Implement game scoring UI interaction for a 5 button click by each player'
+    );
   });
   it('Deuce', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -192,7 +204,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player2-scores').simulate('click');
     wrapper.find('button.player2-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: Deuce', 'Implement game scoring UI interaction for a 6 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: Deuce',
+      'Implement game scoring UI interaction for a 6 button click by each player'
+    );
   });
   it('Advantage, player1', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -205,7 +220,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player2-scores').simulate('click');
     wrapper.find('button.player1-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: Advantage, player1', 'Implement game scoring UI interaction for a 6 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: Advantage, player1',
+      'Implement game scoring UI interaction for a 6 button click by each player'
+    );
   });
   it('Game, player1', () => {
     const wrapper = shallow(<Scoreboard />);
@@ -215,7 +233,10 @@ describe('<Scoreboard />', () => {
     wrapper.find('button.player1-scores').simulate('click');
     wrapper.find('button.player1-scores').simulate('click');
 
-    expect(wrapper.find('h2#score').text()).to.equal('Score: Game, player1', 'Implement game scoring UI interaction for a 4 button click by each player');
+    expect(wrapper.find('h2#score').text()).to.equal(
+      'Score: Game, player1',
+      'Implement game scoring UI interaction for a 4 button click by each player'
+    );
   });
 });
 
